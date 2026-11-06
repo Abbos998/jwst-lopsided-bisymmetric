@@ -1,0 +1,14 @@
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{$A_1$} & \multicolumn{2}{c}{$A_2$} & \multicolumn{2}{c}{$A_1/A_2$}\\
+Step & $z\sim0.75$ & $z\sim4.5$ & $z\sim0.75$ & $z\sim4.5$ & $z\sim0.75$ & $z\sim4.5$\\
+\midrule
+V0 original pipeline & 0.078 & 0.152 & 0.117 & 0.127 & 0.75 & 1.12\\
+V1 + WCS centre, field offset & 0.050 & 0.123 & 0.112 & 0.134 & 0.50 & 0.97\\
+V2 + background, all pixels & 0.051 & 0.178 & 0.115 & 0.181 & 0.50 & 0.99\\
+V3 + deprojection & 0.052 & 0.160 & 0.057 & 0.107 & 1.04 & 1.37\\
+V4 + neighbour masking & 0.043 & 0.112 & 0.055 & 0.107 & 0.80 & 1.10\\
+V5 + $0.5$--$1.5\,r_d$ annulus & 0.054 & 0.109 & 0.066 & 0.125 & 0.82 & 0.88\\
+V6 + S\'ersic position angle (adopted) & 0.055 & 0.104 & 0.054 & 0.094 & 0.99 & 1.02\\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper."
+title: "Lopsided and bisymmetric structure grow together in JWST galaxies at 0.5<z<6: code and data"
+authors:
+  - family-names: Omonov
+    given-names: A. U.
+  - family-names: Nuritdinov
+    given-names: S. N.
+  - family-names: Mirtadjieva
+    given-names: K. T.
+license: MIT

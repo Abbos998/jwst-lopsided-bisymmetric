@@ -1,0 +1,32 @@
+# 2026-11-06 11:08 UTC  bash ../tests/test_gates.sh
+== complete inputs
+  PASS  build_all.sh passes with all inputs  [6s]
+  PASS  reproduce_table1.sh reproduces Table 1, errors and Table 4  [8s]
+  PASS  verify_table1.py --submission passes  [8s]
+  PASS  Table 3 F444W row equals Table 1 (same calibration)  [8s]
+== missing inputs stop the build
+  PASS  build stops without systematics run scale0.5  [9s]
+  PASS  build stops without systematics run scale1.5  [11s]
+  PASS  build stops without systematics run rising  [12s]
+  PASS  build stops without systematics run falling  [13s]
+  PASS  build stops without injection_per_object.csv  [14s]
+  PASS  build stops without the F277W measurements (rest-frame test)  [16s]
+== make_table1.py alone
+  PASS  make_table1.py refuses to run without --syst  [17s]
+  PASS  make_table1.py refuses with 3 of 4 systematics runs  [18s]
+== tampering after a complete build is detected
+  PASS  reproduce fails without intermediate run scale0.5  [23s]
+  PASS  reproduce fails without intermediate run scale1.5  [23s]
+  PASS  reproduce fails without intermediate run rising  [23s]
+  PASS  reproduce fails without intermediate run falling  [23s]
+  PASS  reproduce fails if a per-galaxy value is changed (checksum)  [23s]
+  PASS  verify fails if a Table 1 value is changed by 0.002  [24s]
+  PASS  reproduce fails if a Table 1 value is changed by 0.002  [26s]
+  PASS  verify --submission fails if one error is missing  [26s]
+  PASS  verify fails if total error != sqrt(stat^2 + syst^2)  [27s]
+  PASS  verify --submission fails if a systematics run is not recorded  [27s]
+  PASS  manuscript check fails if Table 3 F444W row differs from Table 1  [28s]
+  PASS  reproduce fails if Appendix A table is edited by hand  [30s]
+  PASS  untouched build still reproduces  [32s]
+
+25 passed, 0 failed  (total 32 s)

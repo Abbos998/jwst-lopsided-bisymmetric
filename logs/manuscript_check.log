@@ -1,0 +1,17 @@
+# 2026-11-06 11:08 UTC  compare_tex
+median_recovery_test.csv, injection_sample_match.csv identical to the regenerated files
+  [ok] Table 1 errors = sqrt(stat_cal^2 + syst^2) (Table 5): max deviation 9.7e-17
+Consistency checks
+  [ok] Table 1 = Eq. (2) applied to Table 4: max |recomputed - stored| = 0.0000 (strict check: verify_table1.py)
+  [ok] Table 2 adopted step = A_meas of Table 1: max difference 0.0000 over all bins
+  [ok] Table 3 "F444W only" = Table 1: max difference 0.000 (rerun restframe_test.py with the Table 1 calibration if it fails)
+  [ok] robustness tests (Appendix B) from the same run as Table 1: ok
+wrote table1.tex, table_chain.tex, table_errors.tex, table_steps.tex, table_restframe.tex, numbers.tex (109 numbers) in /tmp/tmp.yfWYDtTh8W
+  [ok] uncertainties present: all
+All manuscript consistency checks passed.
+tex/numbers.tex identical to the regenerated file
+tex/table1.tex identical to the regenerated file
+tex/table_chain.tex identical to the regenerated file
+tex/table_errors.tex identical to the regenerated file
+tex/table_steps.tex identical to the regenerated file
+tex/table_restframe.tex identical to the regenerated file

@@ -1,0 +1,10 @@
+# 2026-11-06 11:08 UTC  bash reproduce_table1.sh
+1/4 checksums OK
+2/4 Table 1 regenerated (systematics: scale0.5 scale1.5 rising falling)
+SUBMISSION CHECK: passed
+3/4 Table 1 and Table 4 rebuilt, checks passed
+4/4 data/table1_disks_F444W.csv: max difference 0.00e+00 over 32 columns
+    tex/table1.tex identical
+    tex/table_chain.tex identical
+    tex/table_errors.tex identical
+SUBMISSION CHECK: passed (Table 1, its errors and Table 4 reproduced from the package)

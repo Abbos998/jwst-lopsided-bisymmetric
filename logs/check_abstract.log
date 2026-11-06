@@ -1,0 +1,19 @@
+# 2026-11-06 11:01 UTC  python3 check_abstract.py --pdf ../../manuscript/jwst_mnras_v1.5.pdf --data ../data
+where     quantity                                         data/  expected in PDF        result
+Abstract  N valid galaxies (Table 1, sum)                  5,529  5,529                  ok
+Abstract  A1, z~0.75 (Table 1)                             0.125  from 0.13              ok
+Abstract  A1, z>4 (mean of z~4.5, 5.5)                     0.248  to 0.25                ok
+Abstract  A2, z~0.75 (Table 1)                             0.142  from 0.14              ok
+Abstract  A2, z>4                                          0.331  to 0.33                ok
+Abstract  A1 growth at 1.0 um (Table 3)                     2.02  ≈ 2.0                  ok
+Abstract  A2 growth at 1.0 um (Table 3)                     2.09  ≈ 2.1                  ok
+Abstract  A1/A2 corr., weighted mean z<3.5         0.851 ± 0.029  0.85 ± 0.03            ok
+Abstract  A1/A2 corr., weighted mean z>3.5         0.682 ± 0.048  0.68 ± 0.05            ok
+Abstract  early types A1/A2 (mean)                         0.571  ≈ 0.6                  ok
+Summary   A1 growth z~0.75 -> z>4                           1.98  factors 2.0            ok
+Summary   A2 growth z~0.75 -> z>4                           2.32  and 2.3                ok
+Summary   A1/A2 corr., weighted mean z<3.5                 0.851  0.85 ± 0.03            ok
+Summary   A1/A2 corr., weighted mean z>3.5                 0.682  0.68 ± 0.05            ok
+Summary   early types A1/A2                                0.571  ≈ 0.6                  ok
+
+All Abstract and Summary numbers agree with the final tables.

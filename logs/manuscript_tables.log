@@ -1,0 +1,8 @@
+# 2026-11-06 11:01 UTC  python3 check_manuscript_tables.py --main ../../manuscript/main.tex --tex ../tex
+  [ok] tab:main: 9 rows in main.tex, 9 generated
+  [ok] tab:steps: 7 rows in main.tex, 7 generated
+  [ok] tab:chain: 9 rows in main.tex, 9 generated
+  [ok] tab:robust: 11 rows in main.tex, 11 generated
+  [ok] tab:errors: 9 rows in main.tex, 9 generated
+  [ok] tab:restframe: 3 rows in main.tex, 3 generated
+All manuscript tables agree with data/.

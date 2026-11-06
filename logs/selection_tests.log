@@ -1,0 +1,156 @@
+$ S=~/Downloads/pasp_v3/pasp_SUBMISSION/scripts
+unzip -o ~/Downloads/selection_tests_package.zip -d "$S"
+cd "$S"
+ROOT=~/Downloads/pasp_v3 bash run_selection_tests.sh 2>&1 | tee ../logs/selection_tests.log
+Archive:  ~/Downloads/selection_tests_package.zip
+  inflating: ~/Downloads/pasp_v3/pasp_SUBMISSION/scripts/README_SELECTION_UZ.md  
+  inflating: ~/Downloads/pasp_v3/pasp_SUBMISSION/scripts/photoz_mc_test.py  
+  inflating: ~/Downloads/pasp_v3/pasp_SUBMISSION/scripts/size_sn_matched_test.py  
+  inflating: ~/Downloads/pasp_v3/pasp_SUBMISSION/scripts/run_selection_tests.sh  
+  inflating: ~/Downloads/pasp_v3/pasp_SUBMISSION/scripts/calib_core.py  
+  inflating: ~/Downloads/pasp_v3/pasp_SUBMISSION/scripts/injection_qpa_test.py  
+=== 1 photometric-redshift Monte Carlo
+5529 galaxies; unperturbed binning reproduces Table 1 to 8.3e-17 (N per bin [1325, 1192, 1179, 645, 421, 290, 217, 173, 87])
+columns z160/z840, spec-z column z_spec (993 galaxies kept fixed); adopted z inside [z160,z840] for 98% of galaxies; median sigma_z/(1+z) = 0.035; 0 galaxies without percentiles kept fixed
+Nominal (Table 1, same definitions): A1 growth 1.984, A2 growth 2.322, <A1/A2> z<3.5 0.862, z>3.5 0.685
+(<A1/A2> are simple means of the corrected bins, as in the robustness table)
+
+split-normal (500 realisations):
+  A1_growth 1.870 +- 0.050  [2.5-97.5%: 1.779-1.967]
+  A2_growth 2.196 +- 0.110  [2.5-97.5%: 1.948-2.363]
+  R12_lo    0.862 +- 0.006  [2.5-97.5%: 0.851-0.873]
+  R12_hi    0.696 +- 0.016  [2.5-97.5%: 0.665-0.729]
+split-normal + 5% outliers (500 realisations):
+  A1_growth 1.604 +- 0.081  [2.5-97.5%: 1.429-1.746]
+  A2_growth 1.803 +- 0.121  [2.5-97.5%: 1.584-2.058]
+  R12_lo    0.861 +- 0.007  [2.5-97.5%: 0.849-0.875]
+  R12_hi    0.706 +- 0.022  [2.5-97.5%: 0.664-0.753]
+
+Per-bin mean +- s.d. over realisations:
+                                   N_mean     N_sd  A1_mean   A1_sd  A2_mean   A2_sd
+scenario                   zbin                                                     
+split-normal               0.75  1337.076  11.9150   0.1263  0.0008   0.1426  0.0013
+                           1.25  1191.236  16.4775   0.1429  0.0022   0.1712  0.0026
+                           1.75  1134.598  15.4855   0.1660  0.0020   0.1733  0.0031
+                           2.25   645.152  13.6058   0.1574  0.0038   0.1745  0.0051
+                           2.75   439.608  10.9252   0.1657  0.0042   0.1990  0.0074
+                           3.25   281.902   8.8899   0.1853  0.0075   0.2040  0.0071
+                           3.75   198.458   7.6192   0.1889  0.0071   0.2646  0.0132
+                           4.50   168.930   6.4090   0.2265  0.0111   0.3100  0.0145
+                           5.50    77.032   4.3202   0.2456  0.0089   0.3164  0.0314
+split-normal + 5% outliers 0.75  1313.262  13.7362   0.1265  0.0010   0.1427  0.0015
+                           1.25  1165.456  16.6963   0.1431  0.0026   0.1716  0.0027
+                           1.75  1102.724  16.6411   0.1659  0.0025   0.1739  0.0035
+                           2.25   638.364  14.8224   0.1571  0.0041   0.1732  0.0056
+                           2.75   438.736  12.6056   0.1651  0.0047   0.1978  0.0086
+                           3.25   290.414   9.8848   0.1826  0.0074   0.2022  0.0087
+                           3.75   210.862   8.9054   0.1857  0.0068   0.2539  0.0164
+                           4.50   202.262   8.6110   0.2051  0.0109   0.2789  0.0206
+                           5.50   114.320   7.2839   0.2007  0.0194   0.2358  0.0308
+=== 2 resolution- and S/N-matched subsamples
+--- match = size
+5529 valid galaxies, 6464 in the injection catalogue, 5451 joined on idx (median |dz| between the two files 0.0e+00)
+match=size; r_d/FWHM 1.30-2.10, S/N >= 10; 2332 galaxies
+   z   N  N_full  x_med  x_med_full  snr_med  snr_med_full
+0.75 414    1316   1.68        2.33   469.93        510.67
+1.25 467    1179   1.70        1.96   419.25        449.98
+1.75 533    1172   1.62        1.75   253.41        285.43
+2.25 296     640   1.66        1.73   267.47        305.13
+2.75 233     417   1.65        1.62   141.98        148.19
+3.25 151     285   1.64        1.55   156.62        156.62
+3.75 111     213   1.60        1.54    99.44        113.57
+4.50  86     156   1.61        1.49    51.88         56.05
+5.50  41      73   1.53        1.50    66.18         71.81
+matched: 2700 injected models
+full: 2700 injected models
+
+Match: size. r_d/FWHM 1.30-2.10, S/N >= 10
+
+   z  N_matched  N_full  A1_matched  A1_full  A2_matched  A2_full flag
+0.75        414    1316       0.137    0.125       0.108    0.142     
+1.25        467    1179       0.167    0.144       0.125    0.154     
+1.75        533    1172       0.164    0.166       0.154    0.169     
+2.25        296     640       0.156    0.157       0.161    0.180     
+2.75        233     417       0.168    0.165       0.191    0.191     
+3.25        151     285       0.213    0.207       0.204    0.212     
+3.75        111     213       0.197    0.178       0.323    0.250     
+4.50         86     156       0.226    0.257       0.314    0.311     
+5.50         41      73       0.247    0.266       0.333    0.348     
+
+ sample  N_total bins_used_high  A1_growth  A2_growth  R12_lo  R12_hi
+matched     2332        4.5,5.5      1.721      3.004   0.968   0.697
+   full     5451        4.5,5.5      2.091      2.317   0.879   0.703
+
+Bins with N < 20 are excluded from the growth factors and means; the matched growth should be compared with the full-sample row (same seed), not with Table 1.
+--- match = snr
+5529 valid galaxies, 6464 in the injection catalogue, 5451 joined on idx (median |dz| between the two files 0.0e+00)
+match=snr; r_d/FWHM 0.93-8.57, S/N >= 72; 4731 galaxies
+   z    N  N_full  x_med  x_med_full  snr_med  snr_med_full
+0.75 1280    1316   2.31        2.33   534.59        510.67
+1.25 1119    1179   1.95        1.96   483.34        449.98
+1.75 1017    1172   1.75        1.75   369.41        285.43
+2.25  541     640   1.75        1.73   395.09        305.13
+2.75  316     417   1.58        1.62   251.03        148.19
+3.25  210     285   1.56        1.55   253.65        156.62
+3.75  144     213   1.54        1.54   193.47        113.57
+4.50   67     156   1.43        1.49   176.36         56.05
+5.50   37      73   1.47        1.50   138.25         71.81
+matched: 2700 injected models
+full: 2700 injected models
+
+Match: snr. r_d/FWHM 0.93-8.57, S/N >= 72
+
+   z  N_matched  N_full  A1_matched  A1_full  A2_matched  A2_full flag
+0.75       1280    1316       0.121    0.125       0.139    0.142     
+1.25       1119    1179       0.141    0.144       0.150    0.154     
+1.75       1017    1172       0.163    0.166       0.159    0.169     
+2.25        541     640       0.147    0.157       0.162    0.180     
+2.75        316     417       0.149    0.165       0.177    0.191     
+3.25        210     285       0.192    0.207       0.186    0.212     
+3.75        144     213       0.178    0.178       0.228    0.250     
+4.50         67     156       0.150    0.257       0.169    0.311     
+5.50         37      73       0.245    0.266       0.222    0.348     
+
+ sample  N_total bins_used_high  A1_growth  A2_growth  R12_lo  R12_hi
+matched     4731        4.5,5.5      1.634      1.407   0.885   0.796
+   full     5451        4.5,5.5      2.091      2.317   0.879   0.703
+
+Bins with N < 20 are excluded from the growth factors and means; the matched growth should be compared with the full-sample row (same seed), not with Table 1.
+--- match = both
+5529 valid galaxies, 6464 in the injection catalogue, 5451 joined on idx (median |dz| between the two files 0.0e+00)
+match=both; r_d/FWHM 1.30-2.10, S/N >= 72; 1967 galaxies
+   z   N  N_full  x_med  x_med_full  snr_med  snr_med_full
+0.75 406    1316   1.68        2.33   491.51        510.67
+1.25 447    1179   1.70        1.96   449.91        449.98
+1.75 459    1172   1.62        1.75   313.45        285.43
+2.25 246     640   1.67        1.73   382.08        305.13
+2.75 173     417   1.59        1.62   261.35        148.19
+3.25 111     285   1.66        1.55   246.15        156.62
+3.75  73     213   1.57        1.54   190.68        113.57
+4.50  32     156   1.58        1.49   209.19         56.05
+5.50  20      73   1.51        1.50   126.60         71.81
+matched: 2700 injected models
+full: 2700 injected models
+
+Match: both. r_d/FWHM 1.30-2.10, S/N >= 72
+
+   z  N_matched  N_full  A1_matched  A1_full  A2_matched  A2_full flag
+0.75        406    1316       0.135    0.125       0.114    0.142     
+1.25        447    1179       0.170    0.144       0.126    0.154     
+1.75        459    1172       0.170    0.166       0.140    0.169     
+2.25        246     640       0.158    0.157       0.149    0.180     
+2.75        173     417       0.154    0.165       0.177    0.191     
+3.25        111     285       0.207    0.207       0.171    0.212     
+3.75         73     213       0.177    0.178       0.277    0.250     
+4.50         32     156       0.140    0.257       0.223    0.311     
+5.50         20      73       0.168    0.266       0.360    0.348     
+
+ sample  N_total bins_used_high  A1_growth  A2_growth  R12_lo  R12_hi
+matched     1967        4.5,5.5      1.144      2.565   0.979   0.643
+   full     5451        4.5,5.5      2.091      2.317   0.879   0.703
+
+Bins with N < 20 are excluded from the growth factors and means; the matched growth should be compared with the full-sample row (same seed), not with Table 1.
+
+FINISHED. Send back: cd ~/Downloads/pasp_v3 && zip -r selection_tests.zip selection_tests -x '*per_object.csv'
+$ 
+

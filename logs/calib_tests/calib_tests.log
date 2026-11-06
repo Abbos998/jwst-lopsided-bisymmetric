@@ -1,0 +1,124 @@
+=== 0 inputs
+  stars: ~/Downloads/pasp_v3/psf/F444W_stars.csv (246 kept), cutouts in ~/Downloads/pasp_v3/psf/stars_f444w
+  cutout pixscale 0.05, workers 31, 300 galaxies per bin
+  catalogue q/PA error columns not given: running fixed and noise-scaled scenarios only
+    err ['errx2', 'erry2', 'errxy', 'fluxerr_iso', 'fluxerr_auto', 'magerr_auto', 'fluxerr_aper_0', 'fluxerr_aper_1', 'fluxerr_aper_2', 'f1000w_fluxerr_aper_0', 'f1000w_fluxerr_aper_1', 'f1000w_fluxerr_aper_2', 'f105w_fluxerr_aper_0', 'f105w_fluxerr_aper_1', 'f105w_fluxerr_aper_2', 'f115w_fluxerr_aper_0', 'f115w_fluxerr_aper_1', 'f115w_fluxerr_aper_2', 'f125w_fluxerr_aper_0', 'f125w_fluxerr_aper_1', 'f125w_fluxerr_aper_2', 'f1280w_fluxerr_aper_0', 'f1280w_fluxerr_aper_1', 'f1280w_fluxerr_aper_2', 'f140w_fluxerr_aper_0', 'f140w_fluxerr_aper_1', 'f140w_fluxerr_aper_2', 'f1500w_fluxerr_aper_0', 'f1500w_fluxerr_aper_1', 'f1500w_fluxerr_aper_2']
+    axrat []
+    axis []
+    angle []
+    theta ['theta_image']
+    q_ []
+    pa []
+=== 1 q/PA deprojection-error test
+6464 galaxies after cuts; 2700 injected models; 31 workers
+
+Check: ideal calibration reproduced here vs Table 1 (differences = sampling noise)
+  z    rec1(here/paper)   rec2(here/paper)   A1_final(here/paper)   A2_final(here/paper)
+  0.75  0.828/0.834       0.706/0.723       0.124/0.125          0.147/0.142
+  1.25  0.810/0.820       0.685/0.633       0.141/0.141          0.153/0.170
+  1.75  0.804/0.792       0.627/0.620       0.163/0.167          0.170/0.174
+  2.25  0.801/0.813       0.626/0.679       0.157/0.155          0.190/0.175
+  2.75  0.806/0.779       0.580/0.606       0.162/0.164          0.203/0.194
+  3.25  0.788/0.824       0.578/0.615       0.201/0.190          0.217/0.210
+  3.75  0.789/0.761       0.613/0.566       0.181/0.188          0.262/0.278
+  4.50  0.766/0.779       0.557/0.532       0.250/0.247          0.298/0.309
+  5.50  0.797/0.820       0.593/0.579       0.252/0.250          0.340/0.352
+
+Noise-induced errors per bin:
+      sigma_q  sigma_pa
+zbin                   
+0.75    0.004     1.390
+1.25    0.005     2.009
+1.75    0.007     2.238
+2.25    0.008     2.313
+2.75    0.011     3.766
+3.25    0.014     4.284
+3.75    0.016     5.203
+4.50    0.024     8.980
+5.50    0.024     7.306
+
+Growth factors and mean corrected A1/A2 with each calibration:
+variant  A1_growth  A2_growth  R12_lo  R12_hi
+  ideal      2.028      2.177   0.858   0.693
+     T1      1.982      2.161   0.862   0.691
+     T2      2.038      2.228   0.899   0.705
+     T3      2.062      2.713   0.966   0.706
+     SN      2.069      2.206   0.857   0.672
+   SNx2      2.046      2.243   0.862   0.686
+   SN_q      2.027      2.153   0.865   0.698
+  SN_pa      2.015      2.196   0.858   0.658
+
+Outputs in ~/Downloads/pasp_v3/calib_tests/qpa
+=== 2 PSF uncertainty test
+246 star stamps rebuilt; restack vs nominal: max |diff| = 0.000% of peak
+     variant  fwhm_pix  fwhm_arcsec  ellipticity  A2_ring
+     nominal    3.1234       0.1562       0.0189   0.0022
+     fwhm_m5    3.0322       0.1516       0.0208   0.0022
+     fwhm_p5    3.3299       0.1665       0.0158   0.0026
+       azavg    2.9668       0.1483       0.0000   0.0000
+     restack    3.1234       0.1562       0.0189   0.0022
+     boot_01    3.1236       0.1562       0.0182   0.0010
+     boot_02    3.1189       0.1559       0.0187   0.0024
+     boot_03    3.1182       0.1559       0.0197   0.0031
+     boot_04    3.1210       0.1560       0.0167   0.0016
+     boot_05    3.1257       0.1563       0.0181   0.0016
+     boot_06    3.1237       0.1562       0.0183   0.0022
+     boot_07    3.1243       0.1562       0.0169   0.0024
+     boot_08    3.1217       0.1561       0.0260   0.0034
+     boot_09    3.1278       0.1564       0.0174   0.0025
+     boot_10    3.1231       0.1562       0.0235   0.0019
+     boot_11    3.1268       0.1563       0.0161   0.0026
+     boot_12    3.1225       0.1561       0.0196   0.0033
+     boot_13    3.1267       0.1563       0.0130   0.0010
+     boot_14    3.1218       0.1561       0.0186   0.0015
+     boot_15    3.1269       0.1563       0.0212   0.0029
+     boot_16    3.1200       0.1560       0.0156   0.0028
+     boot_17    3.1157       0.1558       0.0188   0.0023
+     boot_18    3.1185       0.1559       0.0157   0.0024
+     boot_19    3.1263       0.1563       0.0236   0.0020
+     boot_20    3.1228       0.1561       0.0190   0.0014
+ field_ceers    3.1258       0.1563       0.0268   0.0093
+   field_gds    3.1242       0.1562       0.0249   0.0042
+field_primer    3.1091       0.1555       0.0423   0.0057
+
+2700 injected models x 28 PSF variants; 31 workers
+
+Check: nominal calibration reproduced here vs Table 1 (differences = sampling noise)
+  z    rec1(here/paper)   rec2(here/paper)   A1_final(here/paper)   A2_final(here/paper)
+  0.75  0.828/0.834       0.706/0.723       0.124/0.125          0.147/0.142
+  1.25  0.810/0.820       0.685/0.633       0.141/0.141          0.153/0.170
+  1.75  0.804/0.792       0.627/0.620       0.163/0.167          0.170/0.174
+  2.25  0.801/0.813       0.626/0.679       0.157/0.155          0.190/0.175
+  2.75  0.806/0.779       0.580/0.606       0.162/0.164          0.203/0.194
+  3.25  0.788/0.824       0.578/0.615       0.201/0.190          0.217/0.210
+  3.75  0.789/0.761       0.613/0.566       0.181/0.188          0.262/0.278
+  4.50  0.766/0.779       0.557/0.532       0.250/0.247          0.298/0.309
+  5.50  0.797/0.820       0.593/0.579       0.252/0.250          0.340/0.352
+
+Corrected amplitudes per PSF variant (conventional) and PSF scatter vs sigma_tot:
+ zbin  A1_nominal  A1_sigma_psfboot  A1_azavg  A1_field_ceers  A1_field_gds  A1_field_primer  A1_fwhm_m5  A1_fwhm_p5  A1_sigma_tot_paper  A2_nominal  A2_sigma_psfboot  A2_azavg  A2_field_ceers  A2_field_gds  A2_field_primer  A2_fwhm_m5  A2_fwhm_p5  A2_sigma_tot_paper
+ 0.75       0.124             0.000     0.124           0.124         0.124            0.124       0.122       0.125               0.008       0.147             0.000     0.146           0.144         0.146            0.144       0.145       0.150               0.005
+ 1.25       0.141             0.001     0.142           0.141         0.142            0.144       0.140       0.143               0.011       0.153             0.000     0.154           0.153         0.154            0.154       0.151       0.157               0.010
+ 1.75       0.163             0.001     0.164           0.162         0.162            0.163       0.161       0.166               0.011       0.170             0.000     0.168           0.169         0.169            0.170       0.167       0.174               0.010
+ 2.25       0.157             0.001     0.157           0.158         0.158            0.158       0.155       0.160               0.009       0.190             0.001     0.188           0.189         0.190            0.187       0.186       0.196               0.013
+ 2.75       0.162             0.000     0.162           0.162         0.164            0.164       0.160       0.168               0.014       0.203             0.000     0.204           0.201         0.202            0.209       0.199       0.211               0.017
+ 3.25       0.201             0.001     0.200           0.201         0.203            0.203       0.199       0.205               0.016       0.217             0.000     0.216           0.215         0.216            0.215       0.213       0.226               0.021
+ 3.75       0.181             0.000     0.181           0.181         0.182            0.182       0.179       0.186               0.023       0.262             0.001     0.259           0.259         0.262            0.259       0.256       0.273               0.029
+ 4.50       0.250             0.000     0.250           0.250         0.251            0.250       0.246       0.255               0.026       0.298             0.001     0.300           0.299         0.300            0.295       0.292       0.312               0.052
+ 5.50       0.252             0.001     0.254           0.250         0.254            0.252       0.248       0.261               0.028       0.340             0.001     0.341           0.340         0.342            0.340       0.333       0.354               0.084
+
+Growth factors and mean corrected A1/A2 per variant:
+     variant  A1_growth  A2_growth  R12_lo  R12_hi
+       azavg      2.027      2.194   0.855   0.690
+ field_ceers      2.012      2.212   0.862   0.692
+   field_gds      2.029      2.198   0.859   0.690
+field_primer      2.018      2.202   0.857   0.700
+     fwhm_m5      2.022      2.159   0.862   0.695
+     fwhm_p5      2.061      2.223   0.849   0.682
+     nominal      2.028      2.177   0.858   0.693
+     restack      2.028      2.177   0.858   0.693
+bootstrap (20): A1 growth 2.02 +- 0.01, A2 growth 2.18 +- 0.01, R12(z>3.5) 0.69 +- 0.00
+
+Outputs in ~/Downloads/pasp_v3/calib_tests/psf
+
+FINISHED. Send back:  cd ~/Downloads/pasp_v3 && zip -r calib_tests.zip calib_tests -x 'calib_tests/*/psf_per_object.csv'

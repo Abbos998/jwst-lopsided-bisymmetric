@@ -1,0 +1,100 @@
+$ S=~/Downloads/pasp_v3/pasp_SUBMISSION/scripts
+unzip -o ~/Downloads/snr_check_package_v3.zip -d "$S"
+cd "$S"
+ROOT=~/Downloads/pasp_v3 REUSE=1 bash run_snr_check.sh 2>&1 | tee ../logs/snr_check.log
+Archive:  ~/Downloads/snr_check_package_v3.zip
+  inflating: ~/Downloads/pasp_v3/pasp_SUBMISSION/scripts/README_SNR_UZ.md  
+  inflating: ~/Downloads/pasp_v3/pasp_SUBMISSION/scripts/snr_calibration_check.py  
+  inflating: ~/Downloads/pasp_v3/pasp_SUBMISSION/scripts/run_snr_check.sh  
+  inflating: ~/Downloads/pasp_v3/pasp_SUBMISSION/scripts/calib_core.py  
+  inflating: ~/Downloads/pasp_v3/pasp_SUBMISSION/scripts/injection_qpa_test.py  
+catalogue columns: ['idx', 'id', 'field', 'ra', 'dec', 'z', 'logM', 'n_sersic', 'q', 'disk_r_pix', 'A1', 'A2', 'A3', 'n_pix', 'pixscale', 'npix_side', 'sigma_pix', 'n_bg', 'aper_pix', 'flux_ap', 'snr_ap', 'snr_ring', 'peak_snr']
+stellar mass column: logM
+5451 observed galaxies joined
+reusing 10800 injection measurements from ~/Downloads/pasp_v3/selection_tests/snr_check/snr_injection_rows.csv
+74 of 10800 injection measurements are NaN (failed measurement) and are ignored
+
+PART 1 - closure: bin-level correction applied to each S/N tercile of the injections (corrected / injected; 1 = perfect)
+ zbin  tercile  N_inj  snr_med_inj  A1_closure_binlevel  A2_closure_binlevel
+ 0.75        0    206      169.284                1.038                1.037
+ 0.75        1    196      508.279                1.006                0.969
+ 0.75        2    196     2283.342                1.016                1.010
+ 1.25        0    210      132.127                1.034                1.033
+ 1.25        1    203      435.441                1.015                0.965
+ 1.25        2    185     1999.835                0.988                1.021
+ 1.75        0    193       87.887                1.056                1.055
+ 1.75        1    200      285.979                1.012                1.000
+ 1.75        2    204     1625.476                0.951                1.006
+ 2.25        0    197       75.031                1.033                1.032
+ 2.25        1    200      311.076                1.008                0.976
+ 2.25        2    195     1236.482                0.976                1.006
+ 2.75        0    215       51.117                1.057                1.046
+ 2.75        1    214      147.765                1.000                0.998
+ 2.75        2    168      764.700                0.952                0.983
+ 3.25        0    220       48.449                1.089                0.980
+ 3.25        1    190      159.334                0.997                1.008
+ 3.25        2    186      513.632                0.957                1.016
+ 3.75        0    205       37.008                1.186                1.087
+ 3.75        1    182      110.958                0.994                0.918
+ 3.75        2    207      363.152                0.958                0.998
+ 4.50        0    174       19.158                1.305                1.161
+ 4.50        1    194       54.325                0.985                0.987
+ 4.50        2    216      218.562                0.939                0.905
+ 5.50        0    223       23.120                1.285                1.141
+ 5.50        1    179       66.181                0.974                0.934
+ 5.50        2    193      221.002                0.931                0.959
+
+PART 2 - observed galaxies by S/N tercile, each corrected with the calibration of its own tercile
+ zbin  tercile   N  snr_med  logM_med  x_med  A1_terc_cal  A1_terc_cal_err  A2_terc_cal  A2_terc_cal_err  A1_bin_cal  A2_bin_cal
+ 0.75        0 439  168.298     9.258  2.369        0.126            0.006        0.167            0.008       0.127       0.171
+ 0.75        1 438  510.668     9.606  2.268        0.129            0.007        0.138            0.008       0.131       0.135
+ 0.75        2 439 2116.512    10.256  2.333        0.120            0.006        0.124            0.006       0.120       0.124
+ 1.25        0 392  130.911     9.282  1.997        0.147            0.008        0.193            0.015       0.150       0.196
+ 1.25        1 394  449.942     9.712  1.942        0.134            0.007        0.141            0.011       0.133       0.134
+ 1.25        2 393 1946.495    10.364  1.954        0.138            0.007        0.152            0.009       0.135       0.153
+ 1.75        0 391   82.801     9.220  1.641        0.174            0.013        0.210            0.012       0.181       0.217
+ 1.75        1 390  285.427     9.682  1.838        0.161            0.005        0.147            0.012       0.162       0.144
+ 1.75        2 391 1484.225    10.409  1.762        0.159            0.007        0.154            0.006       0.151       0.153
+ 2.25        0 213   75.031     9.254  1.728        0.188            0.011        0.262            0.019       0.187       0.264
+ 2.25        1 214  305.125     9.898  1.736        0.149            0.009        0.178            0.014       0.149       0.171
+ 2.25        2 213 1217.752    10.624  1.731        0.145            0.008        0.126            0.012       0.141       0.124
+ 2.75        0 139   56.523     9.223  1.618        0.209            0.028        0.284            0.035       0.210       0.283
+ 2.75        1 139  148.187     9.605  1.536        0.142            0.011        0.178            0.020       0.139       0.175
+ 2.75        2 139  736.575    10.489  1.687        0.188            0.019        0.162            0.011       0.180       0.155
+ 3.25        0  95   49.576     9.280  1.449        0.197            0.028        0.298            0.040       0.210       0.263
+ 3.25        1  95  156.620     9.812  1.505        0.180            0.015        0.218            0.023       0.178       0.217
+ 3.25        2  95  503.534    10.441  1.713        0.207            0.022        0.154            0.019       0.201       0.154
+ 3.75        0  71   35.277     9.259  1.523        0.185            0.024        0.342            0.035       0.220       0.352
+ 3.75        1  71  113.566     9.771  1.510        0.165            0.014        0.282            0.029       0.160       0.262
+ 3.75        2  71  337.428    10.387  1.623        0.182            0.019        0.182            0.021       0.172       0.175
+ 4.50        0  52   18.185     9.311  1.518        0.223            0.100        0.412            0.138       0.308       0.440
+ 4.50        1  52   56.048     9.427  1.496        0.263            0.031        0.292            0.063       0.258       0.288
+ 4.50        2  52  220.127    10.008  1.442        0.148            0.018        0.182            0.035       0.119       0.147
+ 5.50        0  25   20.785     9.229  1.505        0.256            0.053        0.467            0.165       0.328       0.496
+ 5.50        1  24   75.568     9.604  1.540        0.217            0.065        0.198            0.055       0.211       0.177
+ 5.50        2  24  206.152     9.677  1.467        0.213            0.044        0.256            0.087       0.193       0.237
+
+Reading: closure ~1 in all terciles -> the bin-level calibration is not S/N dependent, and lower amplitudes in the high-S/N tercile reflect the galaxies themselves (compare logM_med). Closure > 1 in the low-S/N tercile -> the noise correction is incomplete there. A value of 0.000 in Part 2 means that the median of the tercile lies at or below the noise floor of that tercile (amplitude not measurable at that S/N), not that the amplitude is zero.
+
+PART 3 - S/N-stratified calibration applied galaxy by galaxy (bootstrap over observed galaxies; 500 resamples; the injection sampling adds about 0.07 to the growth factors)
+                        A1                                      A2                                R12_corr                         
+calibration S/N-stratified bin-level (paper method) S/N-stratified bin-level (paper method) S/N-stratified bin-level (paper method)
+zbin                                                                                                                               
+0.75                 0.125                    0.126          0.140                    0.140          0.861                    0.862
+1.25                 0.139                    0.136          0.161                    0.160          0.863                    0.856
+1.75                 0.163                    0.162          0.164                    0.167          0.882                    0.894
+2.25                 0.157                    0.157          0.187                    0.187          0.832                    0.829
+2.75                 0.173                    0.173          0.187                    0.192          0.855                    0.865
+3.25                 0.190                    0.194          0.211                    0.210          0.867                    0.888
+3.75                 0.176                    0.181          0.267                    0.258          0.600                    0.640
+4.50                 0.196                    0.216          0.251                    0.283          0.741                    0.747
+5.50                 0.226                    0.242          0.275                    0.260          0.678                    0.709
+
+             calibration  A1_growth  A1_growth_err  A2_growth  A2_growth_err  R12_lo  R12_lo_err  R12_hi  R12_hi_err
+bin-level (paper method)      1.817          0.137      1.939          0.250   0.866       0.020   0.699       0.049
+          S/N-stratified      1.688          0.143      1.879          0.244   0.860       0.019   0.673       0.047
+
+R12_lo / R12_hi are simple means of the corrected bins below / above z = 3.5.
+FINISHED. Send back: ~/Downloads/pasp_v3/selection_tests/snr_check/snr_check_summary.txt
+$ 
+

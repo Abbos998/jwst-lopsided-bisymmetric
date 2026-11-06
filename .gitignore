@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.fits
+*.fits.gz
+*.npy
+.DS_Store
