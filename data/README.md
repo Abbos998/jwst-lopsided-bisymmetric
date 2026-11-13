@@ -31,9 +31,7 @@ quadrature sum.
 
 **Robustness tables:** `median_recovery_test.csv` (median correction for a
 spread of amplitudes), `injection_sample_match.csv` (injected vs observed
-r_d, q). `mass_test*.csv` (stellar mass), `review7_*.csv` (self-consistent calibration,
-clumps, amplitude spread, annulus radius), `filter_ratio_F277W_F444W.csv` (same
-galaxies in two filters): written by `scripts/run_review7.sh`; Table 6 of the paper.
+r_d, q). After `scripts/run_review7.sh`: `mass_test*.csv`, `review7_*.csv`.
 
 **Check (level i):** `python3 scripts/verify_table1.py data/table1_disks_F444W.csv`
 recomputes A_final = 2·sqrt(A_meas² − A_floor²)/recovery and the corrected
@@ -53,7 +51,7 @@ compares it with the shipped table.
 number quoted in the text (`tex/numbers.tex`) from these files, and checks
 that Table 2 (adopted step) and Table 3 (F444W only) agree with Table 1.
 
-**Status (v2.8, final; disk radius in 0.04" pixels):** all files were written by `scripts/build_all.sh`
+**Status (v2.5, final):** all files were written by `scripts/build_all.sh`
 from the pipeline outputs, at full precision, with all uncertainties, the
 four systematics runs and N_total. `data/intermediate/` holds the
 per-galaxy measurements and injection runs (with SHA256SUMS). The checks
