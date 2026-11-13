@@ -1,0 +1,30 @@
+5487 valid galaxies with S/N, mass, field and position; S/N column "snr_ap".
+NOTE: neighbour density is from the parent catalogue (bright neighbours only); faint undetected sources need the real-sky injection test.
+
+=== A residual S/N dependence at fixed mass (z>3.5, 339 galaxies)
+  A1: d logA/d logS/N = -0.321+-0.038 (mass only); with crowding added -0.324+-0.040; Spearman(A,S/N)=-0.47
+       crowding coeffs: frac_masked +0.016+-0.195, log(1+nbr3") -0.031+-0.082
+  A2: d logA/d logS/N = -0.312+-0.044 (mass only); with crowding added -0.360+-0.045; Spearman(A,S/N)=-0.40
+       crowding coeffs: frac_masked +1.041+-0.220, log(1+nbr3") +0.047+-0.092
+  reading: if |d logA/d logS-N| drops toward 0 when crowding is added, unmasked bright neighbours explain part of the excess; if it is unchanged, they do not.
+
+=== A residual S/N dependence at fixed mass (z>4, 176 galaxies)
+  A1: d logA/d logS/N = -0.339+-0.047 (mass only); with crowding added -0.353+-0.050; Spearman(A,S/N)=-0.53
+       crowding coeffs: frac_masked +0.220+-0.288, log(1+nbr3") -0.060+-0.111
+  A2: d logA/d logS/N = -0.302+-0.053 (mass only); with crowding added -0.312+-0.056; Spearman(A,S/N)=-0.46
+       crowding coeffs: frac_masked +0.375+-0.320, log(1+nbr3") +0.168+-0.123
+  reading: if |d logA/d logS-N| drops toward 0 when crowding is added, unmasked bright neighbours explain part of the excess; if it is unchanged, they do not.
+
+=== B A1 vs A2 excess by S/N tercile (z>4; corrected, conventional)
+tercile  N  snr_med  logM_med  A1_corr  A2_corr
+    low 86   12.957     9.236    0.412    0.663
+    mid 85   52.085     9.431    0.247    0.306
+   high 86  200.990     9.803    0.141    0.189
+  low/high tercile ratio: A1 2.93, A2 3.51  (A2>A1 favours real m=2 structure; A1=A2 favours a noise floor)
+
+=== C field dependence of the residual at z>4 (after S/N and mass)
+             group  N  resid_logA1  resid_logA2
+     PRIMER-COSMOS 53       -0.031       -0.062
+        PRIMER-UDS 70        0.045        0.047
+deep (CEERS+GOODS) 53       -0.028       -0.001
+  reading: residuals near 0 in all groups -> the field adds nothing beyond S/N and mass (the excess is an S/N effect); a group offset -> a field-specific effect remains.

@@ -1,0 +1,38 @@
+8 seeds: realsky_s1_bins.csv, realsky_s2_bins.csv, realsky_s3_bins.csv, realsky_s4_bins.csv, realsky_s5_bins.csv, realsky_s6_bins.csv, realsky_s7_bins.csv, realsky_s8_bins.csv
+
+=== per-bin real-sky floor, recovered fraction and corrected amplitude (mean +- sd over seeds)
+   z  floor1_syn  floor2_syn  floor1_real  floor2_real   frec1_real   frec2_real      A1_real      A2_real
+0.75    0.034027    0.033724 0.051+-0.002 0.035+-0.002 0.830+-0.062 0.741+-0.017 0.118+-0.008 0.138+-0.004
+1.25    0.040640    0.042404 0.057+-0.003 0.041+-0.002 0.798+-0.067 0.707+-0.038 0.136+-0.010 0.153+-0.008
+1.75    0.044921    0.044179 0.064+-0.004 0.049+-0.002 0.798+-0.064 0.576+-0.066 0.156+-0.010 0.186+-0.020
+2.25    0.046953    0.048397 0.065+-0.003 0.050+-0.003 0.806+-0.063 0.688+-0.081 0.147+-0.009 0.175+-0.020
+2.75    0.062935    0.056062 0.075+-0.004 0.055+-0.002 0.716+-0.096 0.672+-0.052 0.172+-0.024 0.177+-0.013
+3.25    0.060014    0.054797 0.077+-0.003 0.056+-0.004 0.779+-0.067 0.621+-0.073 0.193+-0.017 0.210+-0.026
+3.75    0.065473    0.065604 0.084+-0.006 0.063+-0.005 0.785+-0.068 0.665+-0.054 0.171+-0.016 0.240+-0.018
+4.50    0.081568    0.089293 0.107+-0.004 0.088+-0.003 0.803+-0.101 0.669+-0.068 0.227+-0.029 0.250+-0.025
+5.50    0.078085    0.081726 0.097+-0.006 0.080+-0.006 0.870+-0.066 0.675+-0.072 0.227+-0.015 0.306+-0.030
+
+=== growth factors z~0.75 -> z>4
+  A1: synthetic 1.98;  real-sky 1.94 +- 0.20
+  A2: synthetic 2.32;  real-sky 2.01 +- 0.09
+
+=== real-sky / synthetic floor ratio (mean +- sd over seeds)
+   z floor1_real/syn floor2_real/syn
+0.75      1.50+-0.07      1.05+-0.07
+1.25      1.41+-0.07      0.97+-0.05
+1.75      1.42+-0.09      1.10+-0.04
+2.25      1.39+-0.07      1.02+-0.06
+2.75      1.20+-0.06      0.98+-0.03
+3.25      1.28+-0.06      1.03+-0.07
+3.75      1.28+-0.09      0.96+-0.08
+4.50      1.31+-0.05      0.99+-0.03
+5.50      1.24+-0.07      0.97+-0.07
+
+=== floor at z>4 in the SAME S/N bands: real-sky vs synthetic (conventional)
+S/N band S/N range  floor1_syn  floor1_real  ratio1  floor2_syn  floor2_real  ratio2
+     low     10-40       0.157 0.201+-0.014    1.28       0.160 0.181+-0.009    1.13
+     mid    40-115       0.081 0.092+-0.004    1.14       0.084 0.073+-0.005    0.86
+    high  115-1043       0.054 0.072+-0.005    1.34       0.060 0.053+-0.004    0.88
+  reading: ratio ~constant across bands => the floor underestimate is uniform in S/N,
+  so the low-S/N excess is not mainly a sky noise floor; ratio rising toward low S/N
+  => the real sky does add a low-S/N floor the synthetic injections miss.
